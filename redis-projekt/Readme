@@ -1,0 +1,11 @@
+# Potrzebne oprogramowanie:
+    - aktualna wersja node.js (https://nodejs.org/en/)
+    - aktualna wersja npm (https://www.npmjs.com/)
+    - aktualna wersja redis lokalnie (https://redis.io/)
+# Uruchomienie:
+    - npm install
+    - node server.js
+# Przykładowy route:
+    - http://localhost:3000/fish/red-snapper
+# Przykładowy response:
+    - za pierwszym razem fromCache powinno być false, za drugim i każdym następnym true. Oznacza to, że dane zostały pobrane z cache.
