@@ -2,9 +2,9 @@
 Microservice written in GoLang using mostly Gorilla MUX
 
 ### Grupa
-Stanisław Marek
-Wioletta Drąg
-Aleksander Kuliński
+Stanisław Marek\
+Wioletta Drąg\
+Aleksander Kuliński\
 Klaudia Balicka
 
 ## Clone
