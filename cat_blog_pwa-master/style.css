@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    
+}
+ 
+html{
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}
+header{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/23/14/57/cat-1853372_960_720.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 55% center;
+}
+h1{
+    background-color: rgba(255, 255, 255,0.450);
+    color: rgb(13, 64, 105);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+a{
+    color: rgb(219, 218, 224);
+    background-color: rgba(95, 66, 45,0.800);
+    width: 20%;
+    text-align: center;
+    margin: auto auto;
+    padding: 15px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 2s;
+ 
+    
+}
+a:hover{
+    background-color: rgb(137, 73, 27);
+}
+main{
+  margin-top: 20px;
+}
+.cat{
+   padding: 20px;
+   margin-bottom: 20px;
+}
+.img{
+    background-image: url(https://cdn.pixabay.com/photo/2017/03/14/14/49/cat-2143332_960_720.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 45% center;
+    width: 100%;
+    height: 250px;
+    margin: 10px auto;
+}
+footer{
+    height: auto;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(95, 66, 45);
+    color: white;
+    border: 0px black Solid;
+    border-radius: 3px;
+}
+footer p{
+    text-align: center;
+    line-height: 40px;
+}
+
+@media  (max-width: 649px){
+    .cat{
+        width: 70%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    
+}
+
+@media  (min-width: 650px){
+    .cat{
+        width: 30%;
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    
+}
+
+@media  (min-width: 750px){
+    .cat{
+        width: 85%;
+    }
+ 
+    
+}

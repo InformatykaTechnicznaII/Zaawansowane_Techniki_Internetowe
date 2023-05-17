@@ -1,0 +1,32 @@
+{
+    "theme_color": "#89491b",
+    "background_color": "#89491b",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "https://tatianalazareva.github.io/cat_blog_pwa/",
+    "name": "Cat Aplication",
+    "short_name": "Cat App",
+    "description": "Aplikacja PWA",
+    "icons": [
+        {
+            "src": "./manifest/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./manifest/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./manifest/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./manifest/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
