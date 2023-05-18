@@ -1,0 +1,94 @@
+trigger:
+  branches:
+    include:
+      - main
+
+variables:
+  - group: my-variable-group  # Zdefiniuj grupę zmiennych
+
+stages:
+  - stage: Preparation
+    jobs:
+      - job: Prepare
+        displayName: 'Prepare Environment'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - checkout: self
+          - script: |
+              echo "Preparing the environment"
+              git clone https://github.com/your/repository.git
+
+  - stage: Build
+    displayName: 'Build'
+    jobs:
+      - job: Build
+        displayName: 'Build Application'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Building the application"
+              cd repository
+              npm install
+              npm run build
+
+  - stage: Test
+    displayName: 'Test'
+    jobs:
+      - job: Test
+        displayName: 'Run Tests'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Running tests"
+              npm run test
+
+  - stage: Deploy
+    displayName: 'Deployment'
+    jobs:
+      - job: Deploy
+        displayName: 'Deploy Application'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Deploying the application"
+              # Dodaj odpowiednie kroki wdrożenia aplikacji
+
+  - stage: Verification
+    displayName: 'Verification'
+    jobs:
+      - job: Verify
+        displayName: 'Verify Application'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Verifying the application"
+              # Dodaj odpowiednie kroki weryfikacji aplikacji
+
+  - stage: Release
+    displayName: 'Release'
+    jobs:
+      - job: Release
+        displayName: 'Publish Application'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Publishing the application"
+              # Dodaj odpowiednie kroki publikacji aplikacji
+
+  - stage: Cleanup
+    displayName: 'Cleanup'
+    jobs:
+      - job: Cleanup
+        displayName: 'Cleanup Environment'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo "Cleaning up"
+              # Dodaj odpowiednie kroki czyszczenia

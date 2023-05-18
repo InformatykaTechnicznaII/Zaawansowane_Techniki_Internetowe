@@ -1,0 +1,59 @@
+stages:
+  - preparation
+  - build
+  - test
+  - deployment
+  - verification
+  - release
+  - cleanup
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  IMAGE_TAG: mywebapp:latest
+
+preparation:
+  stage: preparation
+  script:
+    - echo "Preparing the environment"
+    - git clone https://gitlab.com/your/repository.git
+
+build:
+  stage: build
+  script:
+    - echo "Building the application"
+    - cd repository
+    - npm install
+    - npm run build
+    - docker build -t $IMAGE_TAG .
+
+test:
+  stage: test
+  script:
+    - echo "Running tests"
+    - npm run test
+
+deployment:
+  stage: deployment
+  script:
+    - echo "Deploying the application"
+    - docker run -d -p 80:80 $IMAGE_TAG
+
+verification:
+  stage: verification
+  script:
+    - echo "Verifying the application"
+    - npm run e2e
+    - npm run performance-test
+
+release:
+  stage: release
+  script:
+    - echo "Publishing the application"
+    - npm run publish
+
+cleanup:
+  stage: cleanup
+  script:
+    - echo "Cleaning up"
+    - docker stop $(docker ps -q --filter ancestor=$IMAGE_TAG)
+    - docker rm $(docker ps -a -q --filter ancestor=$IMAGE_TAG)
