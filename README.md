@@ -7,5 +7,4 @@ Członkowie grupy:
 3. Jakub Michalik
 4. Arkadiusz Kuliś
 
-Wersja demonstracyjna:
-https://dev.pyq.pl/agh-r/
+
